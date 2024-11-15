@@ -13,7 +13,7 @@ st.subheader("Either Open Camera & Detect Faces or Upload Images")
         
 
 # Define the face detection model path
-cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+cascade_path = "C:\\Users\\mohammed naser\\Downloads\\deep learning + gen AI\\haarcascade_frontalface_default.xml"
 model = cv2.CascadeClassifier(cascade_path)
 
 # Directory to store detected faces
