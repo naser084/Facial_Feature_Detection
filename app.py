@@ -1,12 +1,8 @@
-import streamlit as st
-import subprocess
-import threading
 import cv2
+import streamlit as st
+import numpy as np
+from PIL import Image
 import os
-def run_app(app_name):
-    """Function to run a Streamlit app using subprocess."""
-    subprocess.run(["streamlit", "run", app_name])
-
 
 st.markdown(
     """
@@ -17,17 +13,24 @@ st.markdown(
     }
 
     /* Center align the title */
-    .title {
+    .title{
         text-align: center;
-        color: #33ff33; /* A nice green  color */
-        font-size: 60px; /* Larger font size */
-        margin-top: 20px;
-        margin-bottom: 60px; /* Space below the title */
+        color: #6600cc; /* A nice purple color */
+        font-size: 50px; /* Larger font size */
+        margin-top: 0px;
+        margin-bottom: 0px; /* Space below the title */
+    }
+    .hh{
+        text-align: center;
+        color: #6600cc; /* A nice purple color */
+        font-size: 30px; /* Larger font size */
+        margin-top: 10px;
+        margin-bottom: 10px; /* Space below the title */
     }
 
     /* Style the sidebar */
     .css-1aumxhk {
-        background-color: #33ff33 !important; /* Light sidebar background */
+        background-color: #f0f4f8 !important; /* Light sidebar background */
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -35,7 +38,7 @@ st.markdown(
 
     /* Style buttons */
     .stButton > button {
-        background-color: #800040 /* choclate background for buttons */
+        background-color: #6600cc; /* purple background for buttons */
         color: white;
         border-radius: 8px;
         padding: 10px 20px;
@@ -46,17 +49,16 @@ st.markdown(
 
     .stButton > button:hover {
         color: white;
-        background-color: orange; /* light blue on hover */
+        background-color: green; /* light purple on hover */
         border-style: solid;
         border-color: black;
     }
-
     </style>
     """,
     unsafe_allow_html=True
 )
-# Title of the main app
-st.markdown("<h1 class='title'>Naser  CNN Web Application Project</h1>", unsafe_allow_html=True)
+
+st.markdown("<h1 class='title'>Face Detector by Faraz</h1>", unsafe_allow_html=True)
 st.markdown("<h3 class='hh'>Detect Faces by Uploading Images</h3>", unsafe_allow_html=True)
 
 # Load the Haar Cascade model
@@ -151,3 +153,10 @@ if st.button("Open Camera"):
 
 st.write("Please note that camera access permissions are managed by Hugging Face, which is why the 'Open Camera' button may not function as expected.")
 st.write("However, the underlying code performs optimally when run in a local environment.")
+
+# Sidebar for displaying the video
+st.sidebar.title("Watch the Video of Demo")
+
+# YouTube video link
+video_url = "https://www.youtube.com/watch?v=Rw2tE-e-0pY?si=SGMwZZNpbJe-WAa3"  # Replace with your YouTube video URL
+st.sidebar.video(video_url)
