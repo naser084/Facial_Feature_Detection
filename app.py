@@ -1,6 +1,7 @@
 import streamlit as st
 import subprocess
 import threading
+import cv2
 
 def run_app(app_name):
     """Function to run a Streamlit app using subprocess."""
