@@ -58,7 +58,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("<h1 class='title'>Face Detector by Naser</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='title'>Face Tracker by Naser</h1>", unsafe_allow_html=True)
 st.markdown("<h3 class='hh'>Detect Faces by Uploading Images</h3>", unsafe_allow_html=True)
 
 # Load the Haar Cascade model
