@@ -64,7 +64,7 @@ with col1:
     if st.button("Upload Image for detecting the Face"):
         st.write("Launching Image detection ...")
     # Start a new thread to run App 1
-        threading.Thread(target=run_app, args=("face.py",)).start()
+        threading.Thread(target=run_app, args=("face_recognizer.py",)).start()
     
 
 # Button for launching App 2
