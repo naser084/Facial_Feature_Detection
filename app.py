@@ -36,6 +36,22 @@ st.markdown(
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
+    /* Sidebar heading styles */
+    .sidebar-heading {
+        color: #FFA500; /* Orange color */
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Sidebar content styles */
+    .sidebar-content {
+        color: #444444; /* Dark grey color */
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
     /* Style buttons */
     .stButton > button {
         background-color: #FFA500; /* Orange background for buttons */
@@ -60,6 +76,29 @@ st.markdown(
 
 st.markdown("<h1 class='title'>Face Tracker by Naser</h1>", unsafe_allow_html=True)
 st.markdown("<h3 class='hh'>Detect Faces by Uploading Images</h3>", unsafe_allow_html=True)
+
+# Sidebar content with styled headings
+st.sidebar.markdown("<div class='sidebar-heading'>What is Face Detection?</div>", unsafe_allow_html=True)
+st.sidebar.markdown(
+    """
+    <div class='sidebar-content'>
+        Face detection is a computer vision technology used to locate and identify human faces in digital images or videos. 
+        It is the first step in various applications like facial recognition, emotion detection, and more.
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
+
+st.sidebar.markdown("<div class='sidebar-heading'>How Face Detection Works?</div>", unsafe_allow_html=True)
+st.sidebar.markdown(
+    """
+    <div class='sidebar-content'>
+        Face detection works by using algorithms that scan the image for patterns that resemble a human face. 
+        Techniques like Haar cascades or deep learning models analyze pixel data to detect facial features such as eyes, nose, and mouth.
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
 
 # Load the Haar Cascade model
 cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
